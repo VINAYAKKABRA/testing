@@ -92,24 +92,16 @@ function MainComponent() {
                   Products <i className="fas fa-chevron-down ml-1 text-xs"></i>
                 </button>
                 <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Extrusions
-                  </a>
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Rods & Bars
-                  </a>
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Custom Shapes
-                  </a>
+                  {productCategories.map((product) => (
+                    <a
+                      key={product.id}
+                      href="/products"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      <i className={`${product.icon} mr-2`}></i>
+                      {product.name}
+                    </a>
+                  ))}
                 </div>
               </div>
               <a
@@ -450,15 +442,15 @@ function MainComponent() {
               <ul className="space-y-2 text-gray-400">
                 <li className="flex items-center">
                   <i className="fas fa-map-marker-alt mr-2 text-[#B5A642]"></i>
-                  123 Industrial Area, Mumbai, India
+                  Shri Krishna Metal, Takiya Ward, Bhandara, Maharastra, 441904
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-phone mr-2 text-[#B5A642]"></i>
-                  +91 22 1234 5678
+                  +91 777-4852-777
                 </li>
                 <li className="flex items-center">
                   <i className="fas fa-envelope mr-2 text-[#B5A642]"></i>
-                  info@ski-alloys.com
+                  office@ski-alloys.com
                 </li>
               </ul>
             </div>

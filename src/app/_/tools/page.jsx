@@ -458,24 +458,16 @@ function MainComponent() {
                   Products <i className="fas fa-chevron-down ml-1 text-xs"></i>
                 </button>
                 <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Rods
-                  </a>
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Hollow
-                  </a>
-                  <a
-                    href="/products"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  >
-                    Ingots/Billets
-                  </a>
+                  {productCategories.map((product) => (
+                    <a
+                      key={product.id}
+                      href="/products"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                    >
+                      <i className={`${product.icon} mr-2`}></i>
+                      {product.name}
+                    </a>
+                  ))}
                 </div>
               </div>
               <a
